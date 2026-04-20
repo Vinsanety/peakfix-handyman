@@ -29,6 +29,21 @@ export const featuredServices = [
   "Office Fixture Installations"
 ];
 
+export const howItWorks = [
+  {
+    title: "Tell us what you need",
+    description: "Reach out by phone, email, or the contact form—photos help us quote faster."
+  },
+  {
+    title: "Get a clear quote",
+    description: "We scope the work and explain pricing before we pick up a tool."
+  },
+  {
+    title: "We show up and deliver",
+    description: "Reliable arrival windows, tidy job sites, and workmanship you can trust."
+  }
+] as const;
+
 export const serviceSections = [
   {
     title: "General Repairs",

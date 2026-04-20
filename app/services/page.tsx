@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { serviceSections } from "@/lib/data";
+import { slugify } from "@/lib/slug";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -23,7 +24,11 @@ export default function ServicesPage() {
 
       <div className="mt-10 space-y-6">
         {serviceSections.map((section) => (
-          <article key={section.title} className="rounded-xl border border-slate/15 bg-white p-6">
+          <article
+            key={section.title}
+            id={slugify(section.title)}
+            className="scroll-mt-28 rounded-xl border border-slate/15 bg-white p-6"
+          >
             <h2 className="text-2xl font-semibold text-charcoal">{section.title}</h2>
             <p className="mt-2 text-sm text-slate">{section.description}</p>
             <ul className="mt-4 list-disc space-y-1 pl-5 text-sm text-charcoal">
