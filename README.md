@@ -2,6 +2,8 @@
 
 Marketing site for **PeakFix Handyman Services** in Boulder, CO: services, gallery, FAQ, and a contact form backed by a Next.js API route.
 
+https://peakfix-handyman.vercel.app/
+
 ## Stack
 
 - [Next.js](https://nextjs.org/) (App Router)
