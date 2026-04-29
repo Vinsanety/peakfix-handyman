@@ -95,7 +95,7 @@ export const faqs = [
 
 export const galleryItems = [
   { src: "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80", alt: "Modern kitchen with backsplash work" },
-  { src: "https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=1200&q=80", alt: "Living room shelving installation" },
+  { src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80", alt: "Living room shelving installation" },
   { src: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=1200&q=80", alt: "Bathroom repair and finishing details" },
   { src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80", alt: "Kitchen fixture upgrade" },
   { src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80", alt: "Interior trim repair project" },
@@ -103,5 +103,5 @@ export const galleryItems = [
   { src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80", alt: "Bedroom maintenance and light fixture replacement" },
   { src: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1200&q=80", alt: "Small office improvement work" },
   { src: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=80", alt: "Entryway repairs and paint touchups" },
-  { src: "https://images.unsplash.com/photo-1499916078039-922301b0eb8f?auto=format&fit=crop&w=1200&q=80", alt: "Residential maintenance visit in Boulder" }
+  { src: "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80&v=2", alt: "Residential maintenance visit in Boulder" }
 ];

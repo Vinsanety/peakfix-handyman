@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { PageTransition } from "@/components/layout/page-transition";
 import { siteConfig } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -50,7 +51,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} flex min-h-screen flex-col`}>
         <Header />
-        <main className="flex min-h-0 flex-1 flex-col">{children}</main>
+        <main className="flex min-h-0 flex-1 flex-col">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
