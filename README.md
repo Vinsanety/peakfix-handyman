@@ -23,12 +23,12 @@ npm install
 
 ## Scripts
 
-| Command        | Description                          |
-| -------------- | ------------------------------------ |
-| `npm run dev`  | Start dev server (default: port 3000) |
-| `npm run build` | Production build                    |
-| `npm run start` | Run production server after build   |
-| `npm run lint`  | Run ESLint                          |
+| Command         | Description                           |
+| --------------- | ------------------------------------- |
+| `npm run dev`   | Start dev server (default: port 3000) |
+| `npm run build` | Production build                      |
+| `npm run start` | Run production server after build     |
+| `npm run lint`  | Run ESLint                            |
 
 ## Local development
 
@@ -41,10 +41,6 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Contact API
 
 `POST /api/contact` expects JSON with `name`, `email`, `phone`, and `message`. Successful submissions are logged on the server; wire this route to email or a CRM when you deploy.
-
-## Favicon
-
-The app icon is defined as [`app/icon.svg`](app/icon.svg) (mountain motif). Next.js serves it automatically; no extra metadata is required.
 
 ## Deploy
 
