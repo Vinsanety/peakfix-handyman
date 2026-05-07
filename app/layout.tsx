@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -7,6 +7,7 @@ import { PageTransition } from "@/components/layout/page-transition";
 import { siteConfig } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -46,12 +47,13 @@ export default function RootLayout({
           sizes="180x180"
           href="/favicon/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="Trail Weather" />
+        <meta name="apple-mobile-web-app-title" content="PeakFix" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
-      <body className={`${inter.className} flex min-h-screen flex-col`}>
+      <body className={`${inter.className} ${oswald.variable} flex min-h-screen flex-col`}>
         <Header />
-        <main className="flex min-h-0 flex-1 flex-col">
+        <main className="relative flex min-h-0 flex-1 flex-col">
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-0 h-20 bg-gradient-to-b from-coal/7 to-transparent" />
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

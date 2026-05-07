@@ -6,7 +6,7 @@ export function SectionWrapper({
   className = ""
 }: PropsWithChildren<{ className?: string }>) {
   return (
-    <section className={`py-14 sm:py-20 ${className}`}>
+    <section className={`py-16 sm:py-24 ${className}`}>
       <Container>{children}</Container>
     </section>
   );

@@ -12,17 +12,19 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-brand/15 bg-brand-muted/90 backdrop-blur">
-      <Container className="flex flex-wrap items-center justify-between gap-3 py-3">
-        <Link href="/" className="text-sm font-bold tracking-wide sm:text-base">
-          <span className="text-brand-dark">PeakFix</span>
-          <span className="text-charcoal"> Handyman Services</span>
+    <header className="sticky top-0 z-40 border-b border-coal/15 bg-ivory/95 backdrop-blur">
+      <Container className="flex flex-wrap items-center justify-between gap-4 py-4">
+        <Link href="/" className="group">
+          <p className="font-(--font-display) text-2xl uppercase tracking-[0.12em] text-coal transition group-hover:text-rust">
+            PeakFix
+          </p>
+          <p className="-mt-1 text-[11px] uppercase tracking-[0.22em] text-concrete">Handyman Services</p>
         </Link>
 
         <button
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="order-2 inline-flex items-center rounded-md border border-brand/20 px-3 py-2 text-sm font-medium text-charcoal transition hover:bg-brand/10 md:hidden"
+          className="order-2 inline-flex min-h-11 min-w-11 items-center justify-center border-2 border-coal px-3 text-xs font-semibold uppercase tracking-[0.16em] text-coal transition hover:bg-coal hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-coal focus-visible:ring-offset-4 focus-visible:ring-offset-ivory md:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
           aria-label="Toggle navigation menu"
@@ -43,7 +45,7 @@ export function Header() {
 
         <nav
           id="mobile-nav"
-          className={`${isMenuOpen ? "flex" : "hidden"} order-4 w-full flex-col gap-3 border-t border-brand/15 pt-3 text-sm md:order-2 md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:border-0 md:pt-0`}
+          className={`${isMenuOpen ? "flex" : "hidden"} order-4 w-full flex-col gap-4 border-t border-coal/15 pt-4 text-sm md:order-2 md:flex md:w-auto md:flex-row md:items-center md:gap-7 md:border-0 md:pt-0`}
         >
           <ButtonLink
             href="/contact"
@@ -53,12 +55,19 @@ export function Header() {
             Request a Quote
           </ButtonLink>
 
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete transition hover:text-rust"
+          >
+            Home
+          </Link>
           {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={closeMenu}
-              className="whitespace-nowrap text-slate transition hover:text-brand-dark"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete transition hover:text-rust"
             >
               {item.label}
             </Link>
@@ -68,7 +77,6 @@ export function Header() {
         <div className="order-3 hidden md:block">
           <ButtonLink
             href="/contact"
-            className="px-4 py-2 text-sm"
             onClick={closeMenu}
           >
             Request a Quote

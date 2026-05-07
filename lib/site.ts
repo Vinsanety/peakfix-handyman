@@ -4,15 +4,15 @@ export const siteConfig = {
   url: "https://peakfix.co",
   phone: "(555) 555-0134",
   email: "hello@peakfix.co",
+  serviceArea: "Boulder, Louisville, Lafayette",
   description:
-    "Reliable handyman services for Boulder homes and businesses. Skilled repairs, clear communication, and honest pricing."
+    "Reliable handyman services for Boulder-area homeowners and small businesses. Clear communication, fair pricing, and quality work."
 };
 
 export const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Our Work" },
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" }
 ];

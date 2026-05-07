@@ -9,7 +9,9 @@ import {
   featuredServices,
   howItWorks,
   galleryItems,
-  serviceSections
+  serviceSections,
+  proofStats,
+  testimonials,
 } from "@/lib/data";
 import { FeatureCard, ServiceCard } from "@/components/cards";
 import { ButtonLink } from "@/components/ui/button";
@@ -35,18 +37,6 @@ export const metadata: Metadata = {
   }
 };
 
-function CheckIcon({ className = "h-5 w-5 shrink-0 text-emerald-600" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-      <path
-        fillRule="evenodd"
-        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-7.5 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 6.948-9.726a.75.75 0 0 1 1.052-.143Z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
 export default function HomePage() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -59,8 +49,8 @@ export default function HomePage() {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Boulder",
-      addressRegion: "CO"
-    }
+      addressRegion: "CO",
+    },
   };
 
   const galleryPreview = galleryItems.slice(0, 3);
@@ -70,91 +60,149 @@ export default function HomePage() {
       <Hero />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
 
-      <SectionWrapper className="bg-gradient-to-r from-brand-muted/90 via-offwhite to-warm-muted/80">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold text-charcoal sm:text-3xl">Why homeowners choose PeakFix</h2>
-          <p className="mt-3 text-slate">
-            Local, insured, and upfront—so you can book with confidence.
-          </p>
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {trustItems.map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-3 rounded-lg border border-brand/20 bg-white/90 px-4 py-3 text-sm font-medium text-charcoal shadow-sm"
-            >
-              <CheckIcon />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper>
-        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-          <h2 className="border-l-4 border-accent pl-4 text-3xl font-bold text-charcoal">Why Choose Us</h2>
-          <p className="mt-4 text-lg text-slate">
-            We treat your home or workplace like our own—clear updates, careful work, and no cutting corners.
-          </p>
-        </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {whyChooseUs.map((item) => (
-            <FeatureCard key={item.title} title={item.title} description={item.description} />
-          ))}
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper className="bg-white">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="border-l-4 border-brand pl-4 text-3xl font-bold text-charcoal">Featured Services</h2>
-            <p className="mt-4 max-w-2xl text-slate">
-              From quick repairs to small improvements—tap a service to read more on our services page.
+      <SectionWrapper className="bg-paper/45">
+        <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
+          <div className="feature-frame bg-ivory p-7 sm:p-9">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">
+              Why PeakFix
+            </p>
+            <h2 className="mt-4 font-(--font-display) text-4xl uppercase leading-tight text-coal sm:text-5xl">
+              Why homeowners choose PeakFix.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-concrete">
+              We make home repairs simple: clear communication, reliable scheduling, and quality work you can trust.
             </p>
           </div>
-          <ButtonLink href="/services" variant="ghost" className="shrink-0 self-start sm:self-auto">
-            View all services
-          </ButtonLink>
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {proofStats.map((item) => (
+              <div
+                key={item.label}
+                className="feature-frame bg-coal p-6 text-ivory"
+              >
+                <p className="font-(--font-display) text-4xl uppercase">
+                  {item.value}
+                </p>
+                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-ivory/70">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredServices.map((service) => (
-            <ServiceCard key={service} title={service} href={serviceHref(service)} />
-          ))}
-        </div>
-      </SectionWrapper>
-
-      <SectionWrapper className="border-y border-brand/10 bg-brand-muted/40">
-        <h2 className="text-center text-2xl font-bold text-charcoal sm:text-3xl">How it works</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-slate">
-          Three simple steps from first message to finished work.
-        </p>
-        <ol className="mt-12 grid gap-8 md:grid-cols-3">
-          {howItWorks.map((step, index) => (
-            <li key={step.title} className="relative flex flex-col items-center text-center md:block md:text-left">
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand text-lg font-bold text-white md:mb-5">
-                {index + 1}
-              </span>
-              <h3 className="text-lg font-semibold text-charcoal">{step.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate">{step.description}</p>
-            </li>
-          ))}
-        </ol>
       </SectionWrapper>
 
       <SectionWrapper>
+        <div className="grid gap-5 md:grid-cols-3">
+          {whyChooseUs.map((item) => (
+            <FeatureCard
+              key={item.title}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper className="border-y border-coal/15 bg-ivory">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">
+              Services
+            </p>
+            <h2 className="mt-3 font-(--font-display) text-4xl uppercase text-coal sm:text-5xl">
+              Services for common home projects.
+            </h2>
+            <p className="mt-3 max-w-2xl text-concrete">
+              Browse our services to see the types of jobs we handle every week.
+            </p>
+          </div>
+          <ButtonLink href="/services" variant="outline">
+            All Services
+          </ButtonLink>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredServices.map((service) => (
+            <ServiceCard
+              key={service}
+              title={service}
+              href={serviceHref(service)}
+            />
+          ))}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper>
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+          <div className="feature-frame bg-paper/60 p-7 sm:p-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">
+              Workflow
+            </p>
+            <h2 className="mt-3 font-(--font-display) text-4xl uppercase leading-tight text-coal sm:text-5xl">
+              How It Works
+            </h2>
+            <ol className="mt-8 space-y-6">
+              {howItWorks.map((step, index) => (
+                <li key={step.title} className="border-l border-coal/20 pl-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">
+                    Step {index + 1}
+                  </p>
+                  <h3 className="mt-1 text-xl font-semibold text-coal">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-concrete">
+                    {step.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="space-y-4">
+            {trustItems.map((item) => (
+              <div key={item} className="feature-frame bg-ivory px-5 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-coal">
+                  {item}
+                </p>
+              </div>
+            ))}
+            {testimonials.map((testimonial) => (
+              <blockquote
+                key={testimonial.author}
+                className="feature-frame bg-coal px-5 py-6 text-ivory"
+              >
+                <p className="text-base leading-7">"{testimonial.quote}"</p>
+                <footer className="mt-3 text-xs uppercase tracking-[0.14em] text-ivory/70">
+                  {testimonial.author}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper className="border-y border-coal/15 bg-paper/40">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-charcoal sm:text-3xl">Recent work</h2>
-            <p className="mt-2 text-slate">A sample of projects we take on for Boulder-area homes and businesses.</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">
+              Our Work
+            </p>
+            <h2 className="mt-3 font-(--font-display) text-4xl uppercase text-coal sm:text-5xl">
+              Recent Work
+            </h2>
+            <p className="mt-2 max-w-xl text-concrete">
+              A quick look at repair, finish, and upgrade work completed in our
+              service area.
+            </p>
           </div>
           <Link
             href="/gallery"
-            className="shrink-0 text-sm font-semibold text-brand-dark underline-offset-2 hover:underline"
+            className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-coal underline-offset-2 hover:underline"
           >
-            View full gallery →
+            Open Full Gallery
           </Link>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -162,7 +210,7 @@ export default function HomePage() {
             <Link
               key={item.src}
               href="/gallery"
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-slate/15"
+              className="group feature-frame relative aspect-4/3 overflow-hidden"
             >
               <Image
                 src={item.src}
@@ -171,32 +219,43 @@ export default function HomePage() {
                 sizes="(max-width: 640px) 100vw, 33vw"
                 className="object-cover transition duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-linear-to-t from-coal/40 via-transparent to-transparent" />
             </Link>
           ))}
         </div>
       </SectionWrapper>
 
       <SectionWrapper>
-        <div className="rounded-2xl border border-brand/20 bg-gradient-to-br from-brand-muted/50 to-white px-6 py-8 sm:px-10">
-          <p className="text-center text-lg text-charcoal">
-            Questions about pricing, scheduling, or service areas?{" "}
-            <Link href="/faq" className="font-semibold text-brand-dark underline-offset-2 hover:underline">
-              Read our FAQ
-            </Link>
-            {" —or reach out anytime."}
+        <div className="feature-frame bg-coal px-6 py-10 text-ivory sm:px-10">
+          <p className="text-center text-sm uppercase tracking-[0.16em] text-ivory/70">
+            Need details before booking?
+          </p>
+          <p className="mt-3 text-center text-xl leading-8">
+            Visit our{" "}
+            <Link
+              href="/faq"
+              className="font-semibold text-rustlight underline-offset-2 hover:underline"
+            >
+              FAQ
+            </Link>{" "}
+            for answers about pricing, scheduling, and service areas.
           </p>
         </div>
       </SectionWrapper>
 
       <SectionWrapper>
-        <div className="rounded-2xl bg-gradient-to-br from-charcoal via-slate to-brand-dark px-6 py-10 text-center text-offwhite shadow-lg sm:px-10">
-          <h2 className="text-3xl font-bold">Ready to fix that to-do list?</h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-offwhite/90">
-            Tell us what you need—we&apos;ll get back with timing and a straightforward quote.
+        <div className="feature-frame bg-rust px-6 py-12 text-center text-ivory sm:px-10">
+          <h2 className="font-(--font-display) text-4xl uppercase sm:text-5xl">
+            Need handyman help?
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-ivory/90">
+            Tell us what you need help with and we will follow up with a clear quote and schedule.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="/contact">Get a Quote</ButtonLink>
-            <ButtonLink href={`tel:${siteConfig.phone.replace(/\D/g, "")}`} variant="secondary" className="border border-white/20 bg-white/10 text-offwhite hover:bg-white/20">
+            <ButtonLink href="/contact" variant="secondary">
+              Request a Quote
+            </ButtonLink>
+            <ButtonLink href={`tel:${siteConfig.phone.replace(/\D/g, "")}`} variant="outlineOnBrand">
               Call {siteConfig.phone}
             </ButtonLink>
           </div>

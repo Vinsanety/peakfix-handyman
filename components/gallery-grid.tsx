@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 type GalleryItem = { src: string; alt: string };
 
@@ -15,7 +16,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         {items.map((item, idx) => (
           <button
             key={item.src}
-            className="group overflow-hidden rounded-xl border border-slate/10"
+            className="group feature-frame overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-coal focus-visible:ring-offset-4 focus-visible:ring-offset-ivory"
             onClick={() => setActiveIndex(idx)}
             aria-label={`Open image: ${item.alt}`}
           >
@@ -24,7 +25,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
               alt={item.alt}
               width={800}
               height={500}
-              className="h-56 w-full object-cover transition-transform group-hover:scale-[1.03]"
+              className="h-60 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
           </button>
         ))}
@@ -32,22 +33,24 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
 
       {activeItem && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/90 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-coal/92 px-4"
           role="dialog"
           aria-modal="true"
         >
-          <button
-            className="absolute right-5 top-5 rounded bg-white px-3 py-1 text-sm font-semibold text-charcoal"
+          <Button
+            type="button"
+            variant="outlineInverse"
+            className="absolute right-5 top-5"
             onClick={() => setActiveIndex(null)}
           >
             Close
-          </button>
+          </Button>
           <Image
             src={activeItem.src}
             alt={activeItem.alt}
             width={1300}
             height={800}
-            className="max-h-[85vh] w-auto rounded-lg object-contain"
+            className="max-h-[85vh] w-auto border border-ivory/20 object-contain"
           />
         </div>
       )}
