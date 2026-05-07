@@ -30,7 +30,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Request a Quote</ButtonLink>
-            <ButtonLink href="/gallery" variant="tertiary">
+            <ButtonLink href="/gallery" variant="outline">
               View Our Work
             </ButtonLink>
           </div>

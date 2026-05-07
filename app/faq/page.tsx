@@ -27,7 +27,7 @@ export default function FAQPage() {
         </div>
       </SectionWrapper>
       <SectionWrapper>
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto mt-1 max-w-4xl sm:mt-2">
           <FAQAccordion items={faqs} />
         </div>
       </SectionWrapper>

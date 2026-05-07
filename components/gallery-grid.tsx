@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "./ui/button";
+import { buttonFocusClasses, Button } from "./ui/button";
 
 type GalleryItem = { src: string; alt: string };
 
@@ -16,7 +16,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         {items.map((item, idx) => (
           <button
             key={item.src}
-            className="group feature-frame overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-coal focus-visible:ring-offset-4 focus-visible:ring-offset-ivory"
+            className={`group feature-frame overflow-hidden transition-[color,background-color,border-color] duration-180 ease-out hover:border-coal/40 ${buttonFocusClasses}`}
             onClick={() => setActiveIndex(idx)}
             aria-label={`Open image: ${item.alt}`}
           >
@@ -39,7 +39,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         >
           <Button
             type="button"
-            variant="tertiary"
+            variant="outline"
             className="absolute right-5 top-5 border-white text-white hover:bg-white hover:text-coal"
             onClick={() => setActiveIndex(null)}
           >

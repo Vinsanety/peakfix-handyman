@@ -8,10 +8,7 @@ import {
 } from "react";
 
 /** WCAG AA-oriented variants — contrast checked for normal ~14px semibold label text. */
-export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary";
+export type ButtonVariant = "primary" | "secondary" | "outline";
 
 type VariantStyles = Record<
   ButtonVariant,
@@ -21,32 +18,35 @@ type VariantStyles = Record<
 const variantStyles: VariantStyles = {
   primary: {
     root:
-      "border-2 border-coal bg-coal text-white hover:border-coal hover:bg-white hover:text-coal focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory active:bg-ash active:text-white active:border-ash",
+      "border-2 border-coal bg-coal text-ivory hover:border-ash hover:bg-ash hover:text-ivory active:border-rustdark active:bg-rustdark active:text-ivory",
     busy:
-      "border-2 border-coal bg-coal text-white opacity-100 cursor-wait focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory",
+      "border-2 border-coal bg-coal text-ivory opacity-100 cursor-wait",
     disabled:
-      "border-2 border-mist bg-mist text-coal cursor-not-allowed opacity-100 hover:bg-mist hover:border-mist hover:text-coal focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory"
+      "border-2 border-steel/50 bg-mist text-concrete cursor-not-allowed opacity-100 hover:border-steel/50 hover:bg-mist hover:text-concrete"
   },
   secondary: {
     root:
-      "border-2 border-rustdark bg-rustdark text-white hover:border-rusthover hover:bg-rusthover focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory active:bg-rusthover active:border-rusthover",
+      "border-2 border-rustdark bg-rustdark text-ivory hover:border-rust hover:bg-rust hover:text-ivory active:border-coal active:bg-coal active:text-ivory",
     busy:
-      "border-2 border-rustdark bg-rustdark text-white cursor-wait focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory",
+      "border-2 border-rustdark bg-rustdark text-ivory cursor-wait",
     disabled:
-      "border-2 border-mist bg-mist text-coal cursor-not-allowed hover:bg-mist hover:border-mist hover:text-coal focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory"
+      "border-2 border-steel/50 bg-mist text-concrete cursor-not-allowed hover:border-steel/50 hover:bg-mist hover:text-concrete"
   },
-  tertiary: {
+  outline: {
     root:
-      "border-2 border-coal bg-transparent text-coal hover:bg-coal hover:text-white focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory active:bg-coal active:text-white",
+      "border-2 border-coal bg-transparent text-coal hover:bg-coal hover:text-ivory active:border-rustdark active:bg-rustdark active:text-ivory",
     busy:
-      "border-2 border-coal bg-transparent text-coal cursor-wait focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory",
+      "border-2 border-coal bg-transparent text-coal cursor-wait",
     disabled:
-      "border-2 border-mist bg-mist text-coal cursor-not-allowed hover:bg-mist hover:text-coal focus-visible:ring-4 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory"
+      "border-2 border-steel/50 bg-mist text-concrete cursor-not-allowed hover:border-steel/50 hover:bg-mist hover:text-concrete"
   }
 };
 
+export const buttonFocusClasses =
+  "focus:outline-none focus-visible:ring-2 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory";
+
 const baseClasses =
-  "inline-flex min-h-11 w-fit max-w-full items-center justify-center gap-2 rounded-none px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] transition-[color,background-color,border-color] duration-180 ease-out focus:outline-none focus-visible:outline-2 focus-visible:outline-coal focus-visible:outline-offset-2";
+  `inline-flex min-h-11 w-fit max-w-full items-center justify-center gap-2 rounded-none px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] shadow-[0_1px_0_rgba(28,40,33,0.14)] transition-[color,background-color,border-color,box-shadow,transform] duration-180 ease-out motion-reduce:transform-none active:translate-y-px ${buttonFocusClasses}`;
 
 function mergeVariantClasses(
   variant: ButtonVariant,

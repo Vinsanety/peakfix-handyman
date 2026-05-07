@@ -121,7 +121,7 @@ export default function HomePage() {
               Browse our services to see the types of jobs we handle every week.
             </p>
           </div>
-          <ButtonLink href="/services" variant="tertiary">
+          <ButtonLink href="/services" variant="outline">
             All Services
           </ButtonLink>
         </div>
@@ -254,15 +254,15 @@ export default function HomePage() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <ButtonLink
               href="/contact"
-              variant="tertiary"
-              className="border-white bg-white text-coal hover:border-coal hover:bg-coal hover:text-white focus-visible:ring-white focus-visible:ring-offset-rust focus-visible:outline-white"
+              variant="outline"
+              className="border-white text-white !hover:border-white !hover:bg-white !hover:text-rustdark !focus-visible:border-white !focus-visible:bg-white !focus-visible:text-rustdark !active:border-white !active:bg-white !active:text-rustdark"
             >
               Request a Quote
             </ButtonLink>
             <ButtonLink
               href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
-              variant="tertiary"
-              className="border-white text-white !hover:border-coal !hover:bg-white !hover:text-coal focus-visible:ring-white focus-visible:ring-offset-rust focus-visible:outline-white"
+              variant="outline"
+              className="border-white text-white !hover:border-white !hover:bg-white !hover:text-rustdark !focus-visible:border-white !focus-visible:bg-white !focus-visible:text-rustdark !active:border-white !active:bg-white !active:text-rustdark"
             >
               Call {siteConfig.phone}
             </ButtonLink>

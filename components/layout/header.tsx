@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { navLinks } from "@/lib/site";
 import { Container } from "./container";
-import { ButtonLink } from "../ui/button";
+import { buttonFocusClasses, ButtonLink } from "../ui/button";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="order-2 inline-flex min-h-11 min-w-11 items-center justify-center border-2 border-coal px-3 text-xs font-semibold uppercase tracking-[0.16em] text-coal transition hover:bg-coal hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-coal focus-visible:ring-offset-4 focus-visible:ring-offset-ivory md:hidden"
+          className={`order-2 inline-flex min-h-11 min-w-11 items-center justify-center border-2 border-coal px-3 text-xs font-semibold uppercase tracking-[0.16em] text-coal transition-[color,background-color,border-color,transform] duration-180 ease-out hover:border-ash hover:bg-ash hover:text-ivory active:translate-y-px active:border-rustdark active:bg-rustdark ${buttonFocusClasses} md:hidden`}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-nav"
           aria-label="Toggle navigation menu"

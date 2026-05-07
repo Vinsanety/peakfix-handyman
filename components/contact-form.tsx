@@ -4,6 +4,8 @@ import { FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 
 type Status = "idle" | "loading" | "success" | "error";
+const fieldFocusClasses =
+  "outline-none transition focus:border-rust focus-visible:outline-2 focus-visible:outline-rust focus-visible:outline-offset-2 focus-visible:ring-4 focus-visible:ring-rustlight/60";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -52,7 +54,7 @@ export function ContactForm() {
           Service type
           <select
             name="serviceType"
-            className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal outline-none transition focus:border-rust"
+            className={`mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal ${fieldFocusClasses}`}
             defaultValue="Residential Repair Services"
           >
             <option>Residential Repair Services</option>
@@ -70,7 +72,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal outline-none transition focus:border-rust"
+          className={`mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal ${fieldFocusClasses}`}
           placeholder="Tell us what needs to be done, constraints, and any timing goals."
         />
       </label>
@@ -104,7 +106,7 @@ function Field({
         name={id}
         type={type}
         required={required}
-        className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm normal-case text-coal outline-none transition focus:border-rust"
+        className={`mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm normal-case text-coal ${fieldFocusClasses}`}
       />
     </label>
   );

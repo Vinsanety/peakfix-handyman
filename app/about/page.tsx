@@ -67,24 +67,30 @@ export default function AboutPage() {
           <li className="border border-coal/15 bg-ivory px-4 py-3">Finish quality that lasts</li>
         </ul>
 
-        <div className="mt-10 feature-frame bg-coal px-6 py-7 text-ivory">
-          <h2 className="font-(--font-display) text-3xl uppercase">Service Area & Response</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-ivory/85">
+        <div className="mt-10 feature-frame bg-rust px-6 py-12 text-center text-ivory sm:px-10">
+          <h2 className="font-(--font-display) text-4xl uppercase sm:text-5xl">Service Area & Response</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-ivory/90">
             We regularly serve Boulder, Louisville, and Lafayette, and typically respond to new requests within one business day.
           </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <ButtonLink href="/contact">Request a Quote</ButtonLink>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink
+              href="/contact"
+              variant="outline"
+              className="border-white text-white !hover:border-white !hover:bg-white !hover:text-rustdark !focus-visible:border-white !focus-visible:bg-white !focus-visible:text-rustdark !active:border-white !active:bg-white !active:text-rustdark"
+            >
+              Request a Quote
+            </ButtonLink>
             <ButtonAnchor
               href={`mailto:${siteConfig.email}`}
-              variant="tertiary"
-              className="break-all border-white text-white hover:bg-white hover:text-coal"
+              variant="outline"
+              className="break-all border-white text-white !hover:border-white !hover:bg-white !hover:text-rustdark !focus-visible:border-white !focus-visible:bg-white !focus-visible:text-rustdark !active:border-white !active:bg-white !active:text-rustdark"
             >
               {siteConfig.email}
             </ButtonAnchor>
             <ButtonAnchor
               href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
-              variant="tertiary"
-              className="border-white text-white hover:bg-white hover:text-coal"
+              variant="outline"
+              className="border-white text-white !hover:border-white !hover:bg-white !hover:text-rustdark !focus-visible:border-white !focus-visible:bg-white !focus-visible:text-rustdark !active:border-white !active:bg-white !active:text-rustdark"
             >
               {siteConfig.phone}
             </ButtonAnchor>
