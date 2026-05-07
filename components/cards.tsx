@@ -16,7 +16,7 @@ export function ServiceCard({ title, href = "/services" }: { title: string; href
       href={href}
       className="group feature-frame block bg-ivory p-5 transition hover:-translate-y-0.5"
     >
-      <h3 className="font-(--font-display) text-xl uppercase leading-tight text-coal group-hover:text-rust">
+      <h3 className="font-(--font-display) text-xl uppercase leading-tight text-coal group-hover:text-rustdark">
         {title}
       </h3>
       <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-concrete">Review service</p>

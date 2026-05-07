@@ -32,14 +32,33 @@ body {
 @layer base {
   a {
     color: inherit;
+    text-underline-offset: 0.18em;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+  }
+
+  a:not([class*="inline-flex"]) {
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+  }
+
+  a:not([class*="inline-flex"]):hover {
+    color: #1c2821;
+    text-decoration-color: currentColor;
+  }
+
+  a:not([class*="inline-flex"]):focus-visible {
+    outline: 3px solid #2f4634;
+    outline-offset: 4px;
+    text-decoration-color: currentColor;
   }
 }
 
-.editorial-frame {
+.feature-frame {
   position: relative;
 }
 
-.editorial-frame::before {
+.feature-frame::before {
   content: "";
   position: absolute;
   inset: 0;

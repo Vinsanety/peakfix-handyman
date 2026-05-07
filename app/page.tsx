@@ -121,7 +121,7 @@ export default function HomePage() {
               Browse our services to see the types of jobs we handle every week.
             </p>
           </div>
-          <ButtonLink href="/services" variant="outline">
+          <ButtonLink href="/services" variant="tertiary">
             All Services
           </ButtonLink>
         </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/gallery"
-            className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-coal underline-offset-2 hover:underline"
+            className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-coal underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-rustdark hover:decoration-rustdark"
           >
             Open Full Gallery
           </Link>
@@ -234,7 +234,7 @@ export default function HomePage() {
             Visit our{" "}
             <Link
               href="/faq"
-              className="font-semibold text-rustlight underline-offset-2 hover:underline"
+              className="font-semibold text-rustlight underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-white hover:decoration-white"
             >
               FAQ
             </Link>{" "}
@@ -252,10 +252,18 @@ export default function HomePage() {
             Tell us what you need help with and we will follow up with a clear quote and schedule.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="/contact" variant="secondary">
+            <ButtonLink
+              href="/contact"
+              variant="tertiary"
+              className="border-white bg-white text-coal hover:border-coal hover:bg-coal hover:text-white focus-visible:ring-white focus-visible:ring-offset-rust focus-visible:outline-white"
+            >
               Request a Quote
             </ButtonLink>
-            <ButtonLink href={`tel:${siteConfig.phone.replace(/\D/g, "")}`} variant="outlineOnBrand">
+            <ButtonLink
+              href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
+              variant="tertiary"
+              className="border-white text-white !hover:border-coal !hover:bg-white !hover:text-coal focus-visible:ring-white focus-visible:ring-offset-rust focus-visible:outline-white"
+            >
               Call {siteConfig.phone}
             </ButtonLink>
           </div>

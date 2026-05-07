@@ -74,10 +74,18 @@ export default function AboutPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Request a Quote</ButtonLink>
-            <ButtonAnchor href={`mailto:${siteConfig.email}`} variant="outlineInverse" className="break-all">
+            <ButtonAnchor
+              href={`mailto:${siteConfig.email}`}
+              variant="tertiary"
+              className="break-all border-white text-white hover:bg-white hover:text-coal"
+            >
               {siteConfig.email}
             </ButtonAnchor>
-            <ButtonAnchor href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`} variant="outlineInverse">
+            <ButtonAnchor
+              href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+              variant="tertiary"
+              className="border-white text-white hover:bg-white hover:text-coal"
+            >
               {siteConfig.phone}
             </ButtonAnchor>
           </div>

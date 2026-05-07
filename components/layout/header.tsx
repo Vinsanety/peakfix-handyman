@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-coal/15 bg-ivory/95 backdrop-blur">
       <Container className="flex flex-wrap items-center justify-between gap-4 py-4">
         <Link href="/" className="group">
-          <p className="font-(--font-display) text-2xl uppercase tracking-[0.12em] text-coal transition group-hover:text-rust">
+          <p className="font-(--font-display) text-2xl uppercase tracking-[0.12em] text-coal transition group-hover:text-rustdark">
             PeakFix
           </p>
           <p className="-mt-1 text-[11px] uppercase tracking-[0.22em] text-concrete">Handyman Services</p>
@@ -58,7 +58,7 @@ export function Header() {
           <Link
             href="/"
             onClick={closeMenu}
-            className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete transition hover:text-rust"
+            className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-coal hover:decoration-coal"
           >
             Home
           </Link>
@@ -67,7 +67,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               onClick={closeMenu}
-              className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete transition hover:text-rust"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.16em] text-concrete underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-coal hover:decoration-coal"
             >
               {item.label}
             </Link>

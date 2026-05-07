@@ -18,13 +18,13 @@ export function Footer() {
           <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-ivory/60">Navigation</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/" className="text-ivory/85 transition hover:text-rustlight">
+              <Link href="/" className="text-ivory/85 underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-white hover:decoration-white">
                 Home
               </Link>
             </li>
             {navLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-ivory/85 transition hover:text-rustlight">
+                <Link href={item.href} className="text-ivory/85 underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-white hover:decoration-white">
                   {item.label}
                 </Link>
               </li>

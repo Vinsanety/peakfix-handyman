@@ -30,7 +30,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Request a Quote</ButtonLink>
-            <ButtonLink href="/gallery" variant="outline">
+            <ButtonLink href="/gallery" variant="tertiary">
               View Our Work
             </ButtonLink>
           </div>
@@ -38,7 +38,7 @@ export function Hero() {
             Direct line:
             <a
               href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
-              className="font-medium text-rust underline-offset-2 hover:underline"
+              className="font-medium text-rust underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-coal hover:decoration-coal"
             >
               {siteConfig.phone}
             </a>

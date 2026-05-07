@@ -39,8 +39,8 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         >
           <Button
             type="button"
-            variant="outlineInverse"
-            className="absolute right-5 top-5"
+            variant="tertiary"
+            className="absolute right-5 top-5 border-white text-white hover:bg-white hover:text-coal"
             onClick={() => setActiveIndex(null)}
           >
             Close
