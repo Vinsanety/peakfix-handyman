@@ -1,95 +1,117 @@
 export const trustItems = [
-  "Locally owned",
-  "Licensed & insured",
-  "Upfront pricing",
-  "Satisfaction guarantee"
+  "Licensed and insured in Colorado",
+  "Clear quote before labor begins",
+  "Craftsmanship warranty on completed work",
+  "Respectful, tidy onsite process"
 ];
 
 export const whyChooseUs = [
   {
     title: "Clear communication",
-    description: "Text updates, arrival windows, and no surprises."
+    description: "We confirm scope, timing, and pricing before work starts so there are no surprises."
   },
   {
-    title: "Skilled craftsmanship",
-    description: "Repairs and improvements done with care and precision."
+    title: "Quality workmanship",
+    description: "Repairs and upgrades are done carefully, cleaned up properly, and built to last."
   },
   {
-    title: "No job too small",
-    description: "From quick fixes to small renovations, we handle it."
+    title: "Help for jobs big and small",
+    description: "From one quick fix to a full punch list, we handle your priorities in one visit plan."
   }
 ];
 
 export const featuredServices = [
-  "General Repairs",
-  "Home Improvements",
-  "Maintenance",
-  "Small Renovations",
-  "Rental Turnover Punch Lists",
-  "Office Fixture Installations"
+  "Residential Repair Services",
+  "Finish Carpentry & Fixture Installs",
+  "Kitchen and Bath Touch Renovations",
+  "Rental Turnover Punch Execution",
+  "Preventive Property Maintenance",
+  "Commercial Interior Service Calls"
 ];
 
 export const howItWorks = [
   {
-    title: "Tell us what you need",
-    description: "Reach out by phone, email, or the contact form—photos help us quote faster."
+    title: "Reach out",
+    description: "Call, email, or use the contact form to tell us what needs to be done."
   },
   {
-    title: "Get a clear quote",
-    description: "We scope the work and explain pricing before we pick up a tool."
+    title: "Get a quote",
+    description: "We review the details and provide clear pricing and scheduling options."
   },
   {
-    title: "We show up and deliver",
-    description: "Reliable arrival windows, tidy job sites, and workmanship you can trust."
+    title: "We get it done",
+    description: "We show up on time, complete the work, and leave the space clean."
   }
 ] as const;
 
+export const proofStats = [
+  { value: "12+", label: "Years serving local clients" },
+  { value: "1,400+", label: "Completed service calls" },
+  { value: "97%", label: "Repeat and referral customers" }
+];
+
+export const testimonials = [
+  {
+    quote:
+      "PeakFix handled our whole repair list quickly and clearly. We knew what to expect from start to finish.",
+    author: "Homeowner, Mapleton Hill"
+  },
+  {
+    quote:
+      "Great communication, solid work, and fair pricing. We will absolutely use them again.",
+    author: "Property manager, Central Boulder"
+  }
+];
+
 export const serviceSections = [
   {
-    title: "General Repairs",
+    title: "Residential Repair Services",
     description:
-      "Fast fixes and practical repairs to keep your home or office working smoothly.",
-    bullets: ["Door fixes", "Drywall patching", "Caulking", "Minor plumbing"]
+      "Common home repairs to keep your house safe, functional, and in good shape.",
+    bullets: ["Door and hardware repairs", "Drywall patching and paint-ready finishing", "Trim and baseboard repairs", "Minor plumbing fixes and recaulking"]
   },
   {
-    title: "Home Improvements",
-    description: "Functional upgrades that improve comfort, layout, and everyday use.",
-    bullets: ["TV mounting", "Shelving", "Smart home setup", "Light fixtures"]
+    title: "Finish Carpentry & Fixture Installs",
+    description: "Practical upgrades that improve how your home looks and works day to day.",
+    bullets: ["Shelving and wall-mount installations", "TV mounting and media setup", "Light and ceiling fan replacement", "Trim carpentry and finishing details"]
   },
   {
-    title: "Maintenance",
+    title: "Preventive Property Maintenance",
     description:
-      "Preventive service that helps avoid larger problems and protects your property.",
-    bullets: ["Seasonal checkups", "Gutter cleaning", "Weatherproofing"]
+      "Seasonal maintenance that helps prevent small issues from becoming expensive repairs.",
+    bullets: ["Exterior sealing and weatherproofing", "Gutter and drainage maintenance", "Hardware tune-ups and adjustments", "Routine wear-and-tear checks"]
   },
   {
-    title: "Small Renovations",
+    title: "Kitchen and Bath Touch Renovations",
     description:
-      "Detail-oriented renovation support for targeted updates and finishing work.",
-    bullets: ["Backsplashes", "Trim", "Small flooring repairs"]
+      "Targeted kitchen and bath updates without the cost and disruption of a full remodel.",
+    bullets: ["Backsplash installation", "Vanity and fixture updates", "Tile repair and grout refresh", "Final punch-list completion"]
   }
 ];
 
 export const faqs = [
   {
     question: "How do you price jobs?",
-    answer: "We quote based on scope, access, and materials. No surprise fees."
+    answer:
+      "We review the scope first, then provide a clear quote with labor and expected material costs."
+  },
+  {
+    question: "Can you help prioritize a long punch list?",
+    answer:
+      "Yes. We can help you prioritize the most important items and tackle the list in phases."
   },
   {
     question: "Do you work with small businesses?",
-    answer: "Yes — offices, studios, and storefronts."
-  },
-  {
-    question: "Are you insured?",
-    answer: "Yes, fully licensed and insured."
+    answer: "Yes. Offices and customer-facing spaces are a regular part of our schedule."
   },
   {
     question: "What areas do you serve?",
-    answer: "Boulder, Louisville, Lafayette."
+    answer: "We primarily serve Boulder, Louisville, and Lafayette."
   },
   {
     question: "Do you guarantee your work?",
-    answer: "Yes — if something's not right, we'll make it right."
+    answer:
+      "Yes. If something within the agreed scope is not right, we will come back and make it right."
   }
 ];
 

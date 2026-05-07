@@ -1,24 +1,79 @@
 @config "../tailwind.config.ts";
 @import "tailwindcss";
 
-html,
-body {
-  background: linear-gradient(180deg, #f0f9ff 0%, #f9fafb 28%, #f9fafb 100%);
-  color: #1f2937;
+:root {
+  color-scheme: light;
 }
 
-a {
-  color: inherit;
+html,
+body {
+  min-height: 100%;
+  background: #f4f1ec;
+  color: #111111;
+}
+
+body {
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+* {
+  border-color: #d3ccc1;
+}
+
+::selection {
+  background: #3e5943;
+  color: #f3f1e7;
+}
+
+/* Must live in @layer base so Tailwind utilities (e.g. text-white on ButtonLink) win over this rule. */
+@layer base {
+  a {
+    color: inherit;
+    text-underline-offset: 0.18em;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+  }
+
+  a:not([class*="inline-flex"]) {
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+  }
+
+  a:not([class*="inline-flex"]):hover {
+    color: #1c2821;
+    text-decoration-color: currentColor;
+  }
+
+  a:not([class*="inline-flex"]):focus-visible {
+    outline: 3px solid #2f4634;
+    outline-offset: 4px;
+    text-decoration-color: currentColor;
+  }
+}
+
+.feature-frame {
+  position: relative;
+}
+
+.feature-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  pointer-events: none;
 }
 
 .page-transition {
-  animation: page-enter 220ms ease-out;
+  animation: page-enter 320ms ease-out;
 }
 
 @keyframes page-enter {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;

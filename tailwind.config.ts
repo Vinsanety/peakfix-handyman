@@ -8,15 +8,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#1F2937",
-        slate: "#374151",
-        offwhite: "#F9FAFB",
-        accent: "#FBBF24",
-        brand: "#0ea5e9",
-        "brand-dark": "#0284c7",
-        "brand-light": "#e0f2fe",
-        "brand-muted": "#f0f9ff",
-        "warm-muted": "#fffbeb"
+        coal: "#1C2821",
+        ash: "#2B3A31",
+        concrete: "#475A4D",
+        ivory: "#F3F1E7",
+        paper: "#E5E0CF",
+        rust: "#3E5943",
+        rustdark: "#2F4634",
+        rusthover: "#36503B",
+        rustlight: "#B89B52",
+        steel: "#7A8678",
+        mist: "#CDC7B7",
+        success: "#2F6A47",
+        danger: "#8D3F2E"
       }
     }
   },

@@ -42,44 +42,45 @@ export function ContactForm() {
   }
 
   return (
-    <form className="space-y-4 rounded-xl border border-slate/15 bg-white p-6" onSubmit={handleSubmit}>
+    <form className="feature-frame space-y-5 bg-ivory p-6 sm:p-8" onSubmit={handleSubmit}>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">Required fields marked with *</p>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field id="name" label="Name" required />
-        <Field id="email" label="Email" type="email" required />
-        <Field id="phone" label="Phone" required />
-        <label className="text-sm font-medium text-charcoal">
+        <Field id="name" label="Name *" required />
+        <Field id="email" label="Email *" type="email" required />
+        <Field id="phone" label="Phone *" required />
+        <label className="text-xs font-semibold uppercase tracking-[0.12em] text-coal">
           Service type
           <select
             name="serviceType"
-            className="mt-1 w-full rounded-md border border-slate/20 px-3 py-2 text-sm"
-            defaultValue="General Repairs"
+            className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal outline-none transition focus:border-rust"
+            defaultValue="Residential Repair Services"
           >
-            <option>General Repairs</option>
-            <option>Home Improvements</option>
-            <option>Maintenance</option>
-            <option>Small Renovations</option>
+            <option>Residential Repair Services</option>
+            <option>Finish Carpentry & Fixture Installs</option>
+            <option>Preventive Property Maintenance</option>
+            <option>Kitchen and Bath Touch Renovations</option>
             <option>Other</option>
           </select>
         </label>
       </div>
-      <Field id="preferredTimes" label="Preferred days/times" />
-      <label className="mt-8 block text-sm font-medium text-charcoal">
-        Message
+      <Field id="preferredTimes" label="Preferred days / times" />
+      <label className="mt-8 block text-xs font-semibold uppercase tracking-[0.12em] text-coal">
+        Project details *
         <textarea
           name="message"
           required
           rows={5}
-          className="mt-1 w-full rounded-md border border-slate/20 px-3 py-2 text-sm"
-          placeholder="Tell us about the job"
+          className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm text-coal outline-none transition focus:border-rust"
+          placeholder="Tell us what needs to be done, constraints, and any timing goals."
         />
       </label>
-      <Button type="submit" disabled={status === "loading"}>
-        {status === "loading" ? "Sending..." : "Submit Request"}
+      <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
+        {status === "loading" ? "Sending..." : "Send Request"}
       </Button>
       {status === "success" && (
-        <p className="text-sm font-medium text-emerald-700">Thanks - your quote request has been sent.</p>
+        <p className="text-sm font-medium text-success">Thanks. We received your request and will follow up shortly.</p>
       )}
-      {status === "error" && <p className="text-sm font-medium text-red-700">{error}</p>}
+      {status === "error" && <p className="text-sm font-medium text-danger">{error}</p>}
     </form>
   );
 }
@@ -96,14 +97,14 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <label className="text-sm font-medium text-charcoal">
+    <label className="text-xs font-semibold uppercase tracking-[0.12em] text-coal">
       {label}
       <input
         id={id}
         name={id}
         type={type}
         required={required}
-        className="mt-1 w-full rounded-md border border-slate/20 px-3 py-2 text-sm"
+        className="mt-2 w-full border border-coal/20 bg-paper/60 px-3 py-2.5 text-sm normal-case text-coal outline-none transition focus:border-rust"
       />
     </label>
   );

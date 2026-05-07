@@ -7,27 +7,44 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Request a quote from PeakFix Handyman Services in Boulder, CO.",
   openGraph: {
-    title: "Request a Quote | PeakFix",
+    title: "Contact PeakFix | Request a Quote",
     description: "Contact PeakFix for repairs, maintenance, and small renovation work."
   }
 };
 
 export default function ContactPage() {
   return (
-    <SectionWrapper>
-      <h1 className="text-4xl font-bold text-charcoal">Request a quote</h1>
-      <div className="mt-8 grid gap-8 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <ContactForm />
+    <>
+      <SectionWrapper className="border-b border-coal/15 bg-paper/45">
+        <div className="feature-frame bg-ivory p-8 sm:p-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-rust">Contact</p>
+          <h1 className="mt-3 font-(--font-display) text-5xl uppercase leading-none text-coal sm:text-6xl">
+            Request a Quote
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-concrete">
+            Tell us about your project and we will follow up with pricing and scheduling options.
+          </p>
         </div>
-        <aside className="rounded-xl border border-slate/15 bg-white p-6">
-          <h2 className="text-xl font-semibold text-charcoal">Contact details</h2>
-          <p className="mt-4 text-sm text-slate">Email</p>
-          <p className="text-charcoal">{siteConfig.email}</p>
-          <p className="mt-4 text-sm text-slate">Phone</p>
-          <p className="text-charcoal">{siteConfig.phone}</p>
-        </aside>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+
+      <SectionWrapper>
+        <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
+          <div>
+            <ContactForm />
+          </div>
+          <aside className="feature-frame h-fit bg-coal p-7 text-ivory">
+            <h2 className="font-(--font-display) text-3xl uppercase">Direct Contact</h2>
+            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-ivory/65">Email</p>
+            <p className="mt-1 text-sm">{siteConfig.email}</p>
+            <p className="mt-4 text-xs uppercase tracking-[0.16em] text-ivory/65">Phone</p>
+            <p className="mt-1 text-sm">{siteConfig.phone}</p>
+            <p className="mt-6 border-t border-ivory/20 pt-4 text-xs uppercase tracking-[0.16em] text-ivory/70">
+              Service Area
+            </p>
+            <p className="mt-1 text-sm">{siteConfig.serviceArea}</p>
+          </aside>
+        </div>
+      </SectionWrapper>
+    </>
   );
 }
