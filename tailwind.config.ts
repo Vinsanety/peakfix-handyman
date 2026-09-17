@@ -8,19 +8,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        coal: "#1C2821",
-        ash: "#2B3A31",
-        concrete: "#475A4D",
-        ivory: "#F3F1E7",
-        paper: "#E5E0CF",
-        rust: "#3E5943",
-        rustdark: "#2F4634",
-        rusthover: "#36503B",
-        rustlight: "#B89B52",
-        steel: "#7A8678",
-        mist: "#CDC7B7",
-        success: "#2F6A47",
-        danger: "#8D3F2E"
+        coal: "#0C4A6E",
+        ash: "#075985",
+        concrete: "#355A78",
+        ivory: "#F7FBFF",
+        paper: "#D7EEF9",
+        rust: "#B44E0C",
+        rustdark: "#8A3C0A",
+        rusthover: "#D96B12",
+        rustlight: "#FBBF24",
+        steel: "#6B8498",
+        mist: "#D4E6F0",
+        success: "#0F8A4B",
+        danger: "#C23030"
       }
     }
   },

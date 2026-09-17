@@ -46,7 +46,7 @@ export const buttonFocusClasses =
   "focus:outline-none focus-visible:ring-2 focus-visible:ring-rustlight focus-visible:ring-offset-2 focus-visible:ring-offset-ivory";
 
 const baseClasses =
-  `inline-flex min-h-11 w-fit max-w-full items-center justify-center gap-2 rounded-none px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] shadow-[0_1px_0_rgba(28,40,33,0.14)] transition-[color,background-color,border-color,box-shadow,transform] duration-180 ease-out motion-reduce:transform-none active:translate-y-px ${buttonFocusClasses}`;
+  `inline-flex min-h-11 w-fit max-w-full items-center justify-center gap-2 rounded-none px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] shadow-[0_1px_0_rgba(12,74,110,0.16)] transition-[color,background-color,border-color,box-shadow,transform] duration-180 ease-out motion-reduce:transform-none active:translate-y-px ${buttonFocusClasses}`;
 
 function mergeVariantClasses(
   variant: ButtonVariant,
